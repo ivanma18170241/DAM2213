@@ -31,5 +31,45 @@ fun main() {
     incrementarNueva()
     println(nueva)
 
+    println("********Clases/instancias*****++++")
+
+    val persona = Persona("Manuel", 18)
+    persona.presentacion()
+    val persona2: Persona = Persona()
+    persona2.nombre = "Jose"
+    persona2.edad = 20
+    persona2.presentacion()
+    println("Nombre de la persona: ${persona.nombre}")
+
+    println("********DATA CLASS*****++++")
+
+    val usuario = Usuario("Yaattzy", "yeratzy.en@culiacan.tecn.mx")
+    println(usuario.toString())
+    val usuario2 = usuario.copy()
+    println(usuario2)
+    println("Los usurios son iguales: ${if(usuario == usuario2) "si son" else "no son"}")
+
+    println("********CONSTANTES*****++++")
+    println(Constates.fecha)
+
 
 }
+    // CLASE PERSONA
+    class Persona(var nombre : String ="", var edad : Int = 0){
+        fun presentacion() {
+            println("La persona se llama $nombre y tiene $edad años.")
+        }
+    }
+
+    // DATA CLASS USUARIO
+    // Representa objetos para poder trabajar con ellos
+
+    data class Usuario(val nombre: String, val correo: String)
+
+   // Companion object
+    class Constates {
+        companion object {
+            const val fecha = "8 septiembre de 2021"
+        }
+    }
+
