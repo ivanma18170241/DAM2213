@@ -104,18 +104,70 @@ fun main() {
         !in 10..20 -> print("jk no esta en el rango")
         else -> println("No es ninguna de las anterios")
     }
-
+    println()
     println("********FOR LOOPS*****++++")
 
     //Listas
-
+        // Lista inmutable
     var listaNombres = listOf<String>("Juan", "Rosa", "Antonio", "Marisol")
     println(listaNombres.get(2))
     println(listaNombres.indexOf("Juan"))
+    println(listaNombres.size)
+    println(listaNombres.first())
+    println(listaNombres.last())
 
+        // Lista mutable - ahi dice8)
     var listaAnimales = mutableListOf<String>("Perro", "Gato", "Conejo", "Pez")
     listaAnimales.add("Hamster")
     println(listaAnimales)
+    listaAnimales.add(1,"Pez")
+    println(listaAnimales)
+
+    // for loops
+
+    for(nom in listaNombres){
+        println(nom)
+    }
+
+    for((index, value) in listaNombres.withIndex()){
+        println("El index es ${index + 1} y el valor es $value")
+    }
+
+    for(i in 0 until 10 step 3 ){
+        if(i==6) continue
+        println(i)
+    }
+
+    repeat(4) {
+        println("Hola")
+    }
+
+    // Extension functions
+
+    val nombre = "JuAn"
+    println(nombre.toLowerCase())
+    println(num1.toString())
+    println(nombre.quitarInicial())
+
+    println(5.esPar())
+
+    listaNombres.forEach { el -> println(el) }
+    println("-------")
+    listaNombres.forEach {
+        println(it)
+    }
+    println("-------")
+    listaNombres.forEachIndexed { index, el -> println("Indice: $index, nombre: $el")  }
+    println("-------")
+
+    val nums = listOf<Int>(1,2,3)
+    println(nums.filter { it > 1 })
+
+    println(nums.map { it * 3 })
+
+    val set = setOf<Int>(1,1,2,3,3,4,5,2,1)
+    println(set)
+
 
 
 }
@@ -159,6 +211,10 @@ fun main() {
     fun imprimirSuma(numero1: Int, numero2: Int): Unit {
         println("La suma es ${numero1 + numero2}")
     }
+
+    fun Int.esPar() : Boolean = this % 2 == 0
+
+    fun String.quitarInicial() : String = this.substring(1)
 
 
 
