@@ -2,5 +2,5 @@
     <string name="app_name">Layout</string>
     <string name="title_home">LinearLayout</string>
     <string name="title_dashboard">FrameLayout</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_notifications">ConstraintLayout</string>
 </resources>
