@@ -26,4 +26,5 @@
         app:layout_anchor="@id/bottom_bar"
         android:src="@drawable/ic_mood"/>
 
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

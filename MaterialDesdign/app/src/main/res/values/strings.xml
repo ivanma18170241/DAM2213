@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MaterialDesign</string>
     <string name="large_text">
-        "Material is the metaphor.\n\n"
+        "Descripción sobre la persona, es buena onda."
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
         "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
@@ -90,4 +90,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="description_image">Imagen de la persona</string>
+    <string name="person_name">Nombre de una persona</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_skip">Omitir</string>
 </resources>
