@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Binding</string>
+    <string name="large_text">
+        "Descripción larga de la persona buena onda."
+        "Off with your head, Dance ?til you?re dead, Heads will roll..Heads will roll..Heads will roll..Heads will roll,
+         On the floor."
+        "Glitter on the west streets, silver over everything, the rivers all wet, You?re all chrome"
+        "Dripping with alchemy, shiver stop shivering, the glitter?s all wet You?re all chrome.\n"
+        "The men cry out the girls cry out, the men cry out the girls cry out, the men cry out, oh no "
+         "The men cry out the girls cry out, the men cry out the girls cry out, the men cry out, oh no "
+        "Off with your head, Dance ?til you?re dead, Heads will roll..Heads will roll..Heads will roll..Heads will roll,
+         On the floor.\n"
+        "You can last, take the past, shut your eyes, realize, "
+        "Glitter on the west streets, silver over everything, the rivers all wet, You?re all chrome"
+        "Off off off with your head, dance dance dance? til you're dead. Off off off with your head, dance dance dance? til you're dead.\n\n"
+    </string>
+    <string name="add">Agregar nuevo</string>
+    <string name="save">enviar</string>
+    <string name="skip">Omitir</string>
+    <string name="url">Ingrese URL de la imagen</string>
+</resources>
