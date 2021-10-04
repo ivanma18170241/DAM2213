@@ -1,200 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cvPerson"
+<layout>
+    <data>
+        <variable
+            name="name"
+            type="String" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginVertical="4dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvPerson"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp">
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/imgCardIcon"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@mipmap/ic_launcher"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txtTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                tools:text="Persona buena onda"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imgCardIcon"
-                app:layout_constraintTop_toTopOf="@id/imgCardIcon" />
-
-            <TextView
-                android:id="@+id/txtDescription"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:ellipsize="end"
-                android:maxLines="4"
-                android:text="@string/large_text"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintBottom_toBottomOf="@id/imgCardIcon"
-                app:layout_constraintEnd_toEndOf="@id/txtTitle"
-                app:layout_constraintStart_toStartOf="@id/txtTitle"
-                app:layout_constraintTop_toBottomOf="@id/txtTitle" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSend"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/save"
-                app:icon="@drawable/ic_send"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imgCardIcon" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSkip"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/skip"
-                app:layout_constraintEnd_toStartOf="@id/btnSend"
-                app:layout_constraintTop_toTopOf="@id/btnSend" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginVertical="8dp"
-        app:layout_constraintTop_toBottomOf="@id/cvPerson"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/imgOther"
-                android:layout_width="0dp"
-                android:layout_height="150dp"
-                android:background="@android:color/holo_blue_dark"
-                android:importantForAccessibility="no"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txtTitle2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:text="Persona buena onda"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imgOther" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilLink"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="8dp"
-                android:hint="@string/url"
-                app:endIconMode="clear_text"
-                app:helperText="Campo requerido"
-                android:enabled="false"
-                app:layout_constraintEnd_toEndOf="@id/txtTitle2"
-                app:layout_constraintStart_toStartOf="@id/txtTitle2"
-                app:layout_constraintTop_toBottomOf="@id/txtTitle2">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edLink"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textUri" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!--
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilPass"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="8dp"
-                android:hint="Ingrese contraseña"
-                app:endIconMode="password_toggle"
-                app:helperText="Campo requerido"
-                app:layout_constraintEnd_toEndOf="@id/txtTitle2"
-                app:layout_constraintStart_toStartOf="@id/txtTitle2"
-                app:layout_constraintTop_toBottomOf="@id/enable">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edPass"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-            -->
-
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/enable"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Habilitar campo URL"
-                android:checked="false"
-                app:layout_constraintTop_toBottomOf="@id/tilLink"
-                app:layout_constraintStart_toStartOf="@id/tilLink"/>
-
-            <RadioGroup
-                android:id="@+id/rgColors"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:checkedButton="@id/rbRed"
-                app:layout_constraintTop_toBottomOf="@id/enable"
-                app:layout_constraintStart_toStartOf="parent" >
+                android:layout_height="match_parent"
+                android:padding="8dp">
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/rbRed"
+                <ImageView
+                    android:id="@+id/imgCardIcon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_launcher"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imgCardIcon"
+                    app:layout_constraintTop_toTopOf="@id/imgCardIcon"
+                    tools:text="@{name.toUpperCase()}" />
+
+                <TextView
+                    android:id="@+id/txtDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:text="@string/large_text"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintBottom_toBottomOf="@id/imgCardIcon"
+                    app:layout_constraintEnd_toEndOf="@id/txtTitle"
+                    app:layout_constraintStart_toStartOf="@id/txtTitle"
+                    app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSend"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rojo"/>
+                    android:text="@string/save"
+                    app:icon="@drawable/ic_send"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgCardIcon" />
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/rbBlue"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSkip"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Azul"/>
+                    android:text="@string/skip"
+                    app:layout_constraintEnd_toStartOf="@id/btnSend"
+                    app:layout_constraintTop_toTopOf="@id/btnSend" />
 
-            </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnAdd"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvPerson">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Aceptar"
-                android:layout_margin="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rgColors"/>
+                android:layout_height="wrap_content">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:id="@+id/imgOther"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:background="@android:color/holo_blue_dark"
+                    android:importantForAccessibility="no"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/txtTitle2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="@{name}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgOther" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilLink"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:enabled="false"
+                    android:hint="@string/url"
+                    app:endIconMode="clear_text"
+                    app:helperText="Campo requerido"
+                    app:layout_constraintEnd_toEndOf="@id/txtTitle2"
+                    app:layout_constraintStart_toStartOf="@id/txtTitle2"
+                    app:layout_constraintTop_toBottomOf="@id/txtTitle2">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edLink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textUri" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPass"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:hint="Ingrese contraseña"
+                    app:endIconMode="password_toggle"
+                    app:helperText="Campo requerido"
+                    app:layout_constraintEnd_toEndOf="@id/txtTitle2"
+                    app:layout_constraintStart_toStartOf="@id/txtTitle2"
+                    app:layout_constraintTop_toBottomOf="@id/enable">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                -->
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/enable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Habilitar campo URL"
+                    app:layout_constraintStart_toStartOf="@id/tilLink"
+                    app:layout_constraintTop_toBottomOf="@id/tilLink" />
+
+                <RadioGroup
+                    android:id="@+id/rgColors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@id/rbRed"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/enable">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rbRed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rojo" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rbBlue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Azul" />
+
+                </RadioGroup>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="Aceptar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rgColors" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

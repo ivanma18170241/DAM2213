@@ -3,9 +3,12 @@ package com.dam.ye.databinding
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.webkit.URLUtil
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.dam.ye.databinding.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -17,8 +20,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         // setContentView(R.layout.activity_main)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+       /*/ binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root) */
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        binding.name = "Mi nombre"
 
         binding.btnAdd.setOnClickListener {
             Toast.makeText(this, "Vinculación", Toast.LENGTH_SHORT).show()
@@ -54,11 +61,25 @@ class MainActivity : AppCompatActivity() {
             else -> binding.imgOther.setBackgroundColor(Color.parseColor("#CCCCCC"))
         }
 
+        val url = binding.edLink.text.toString()
+        var error: String? = null
 
-        Glide.with(this) // Contexto
-            .load(binding.edLink.text.toString()) // URL
-            .centerCrop()
-            .into(binding.imgOther)
+        if(url.isEmpty()){
+            error = "Url vacía"
+        } else if(URLUtil.isValidUrl(url)){
+            Glide.with(this) // Contexto
+                .load(url) // URL
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .centerCrop()
+                .into(binding.imgOther)
+
+            binding.edLink.setText("")
+            error = null
+        } else {
+            error = "URL invalida"
+        }
+
+        binding.tilLink.error = error
 
     }
 }
