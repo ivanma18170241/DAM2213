@@ -21,6 +21,15 @@ class MainActivity : AppCompatActivity() {
         binding.btnNavegar1.setOnClickListener {
             navegarActividadDos()
         }
+
+        binding.btnNavegar2.setOnClickListener {
+            navegarActividadTres()
+        }
+    }
+
+    private fun navegarActividadTres() {
+        val intent = Intent(this, TerceraActivity::class.java)
+        getResult.launch(intent)
     }
 
     private fun navegarActividadDos() {
@@ -30,14 +39,31 @@ class MainActivity : AppCompatActivity() {
 
         getResult.launch(intent)
     }
+    
 
     private val getResult =
         registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) {
-            if(it.resultCode == Activity.RESULT_OK) {
+           /* if(it.resultCode == Activity.RESULT_OK) {
                 var mensaje = it.data?.getStringExtra("mensaje").toString()
                 Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+            }
+            if(it.resultCode == 88) {
+                binding.txtTitle.text = it.data?.getStringExtra("texto")
+            }
+            if(it.resultCode == 20) {
+                binding.txtTitle.text = it.data?.getStringExtra("cancelar")
+            }*/
+
+            when(it.resultCode) {
+                Activity.RESULT_OK -> {
+                    var mensaje = it.data?.getStringExtra("mensaje").toString()
+                    Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+                }
+                88 ->  binding.txtTitle.text = it.data?.getStringExtra("texto")
+                20 ->  binding.txtTitle.text = it.data?.getStringExtra("cancelar")
+                else -> binding.txtTitle.text = "Nada"
             }
         }
 }
