@@ -15,4 +15,11 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:text="Primer Fragmento" />
 
+    <Button
+        android:id="@+id/btnNavegarSF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Ir a Segundo Fragment"/>
+
 </LinearLayout>

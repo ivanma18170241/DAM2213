@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.commit
 import com.ye.fa.databinding.FragmentPrimerBinding
 
 /**
@@ -31,6 +33,14 @@ class PrimerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // binding.txtMensaje.text = "Hola!!!"
         view.findViewById<TextView>(R.id.txtMensaje).text = "Hola!!!!!"
+
+        val button = view.findViewById<Button>(R.id.btnNavegarSF)
+
+        button.setOnClickListener {
+            requireActivity().supportFragmentManager.commit {
+                replace(R.id.fragmentContainerView, SegundoFragment.newInstance("Yeratzy", "Rojo"))
+            }
+        }
     }
 
 
