@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.commit
+import androidx.navigation.fragment.findNavController
 import com.ye.fa.databinding.FragmentPrimerBinding
 
 /**
@@ -34,12 +35,14 @@ class PrimerFragment : Fragment() {
         // binding.txtMensaje.text = "Hola!!!"
         view.findViewById<TextView>(R.id.txtMensaje).text = "Hola!!!!!"
 
-        val button = view.findViewById<Button>(R.id.btnNavegarSF)
+        val button = view.findViewById<Button>(R.id.btnNavegar)
 
         button.setOnClickListener {
-            requireActivity().supportFragmentManager.commit {
+           /* requireActivity().supportFragmentManager.commit {
                 replace(R.id.fragmentContainerView, SegundoFragment.newInstance("Yeratzy", "Rojo"))
-            }
+            } */
+
+            findNavController().navigate(R.id.action_primerFragment_to_blankFragment)
         }
     }
 

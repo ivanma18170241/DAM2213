@@ -5,21 +5,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".PrimerFragment">
+    android:background="@android:color/holo_blue_light"
+    tools:context=".BlankFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/txtMensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:text="Primer Fragmento" />
+        android:textSize="20sp"
+        android:text="@string/hello_blank_fragment" />
 
     <Button
-        android:id="@+id/btnNavegar"
+        android:id="@+id/btnNavegar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Ir a Blank"/>
+        android:text="Ir a Segundo"/>
 
 </LinearLayout>
